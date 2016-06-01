@@ -1,0 +1,35 @@
+-e git+git@code.autologic:d3/adam.git@325754eb18a41d388a388f79345968d05165d3a5#egg=adam
+alembic==0.8.6
+apipkg==1.4
+## !! Could not determine repository location
+ares==0.1
+astroid==1.4.5
+click==6.6
+colorama==0.3.7
+coverage==4.1
+execnet==1.4.1
+Flask==0.11
+itsdangerous==0.24
+Jinja2==2.8
+lazy-object-proxy==1.2.2
+Logbook==0.12.5
+lxml==3.6.0
+Mako==1.0.4
+MarkupSafe==0.23
+marshmallow==2.7.3
+marshmallow-polyfield==3.0
+pkg-resources==0.0.0
+py==1.4.31
+pylint==1.5.5
+PyMySQL==0.7.4
+pytest==2.9.2
+pytest-cov==2.2.1
+pytest-xdist==1.14
+python-editor==1.0
+six==1.10.0
+SQLAlchemy==1.0.13
+SQLAlchemy-Continuum==1.2.4
+SQLAlchemy-Utils==0.32.7
+Werkzeug==0.11.10
+wrapt==1.10.8
+xlrd==0.9.4
