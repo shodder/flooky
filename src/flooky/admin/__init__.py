@@ -1,3 +1,3 @@
 
-from . import endpoints
+from . import views
 

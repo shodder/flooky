@@ -52,6 +52,6 @@ def make_json_exception_app(name, **kwargs):
 
 
 def register_blueprints(app):
-    app.register_blueprint(api.endpoints.blueprint)
-    app.register_blueprint(admin.endpoints.blueprint)
-    app.register_blueprint(test.endpoints.blueprint)
+    app.register_blueprint(api.views.blueprint)
+    app.register_blueprint(admin.views.blueprint)
+    app.register_blueprint(test.views.blueprint)
