@@ -1,4 +1,6 @@
 
+import os
+
 from flask import Flask
 from flask import jsonify
 from werkzeug.exceptions import default_exceptions
@@ -52,6 +54,37 @@ def make_json_exception_app(name, **kwargs):
 
 
 def register_blueprints(app):
-    app.register_blueprint(api.views.blueprint)
-    app.register_blueprint(admin.views.blueprint)
-    app.register_blueprint(test.views.blueprint)
+    '''
+    Method for loading flask blueprints by convention
+    The convention expects
+
+        ares subpackage (i.e. ares.admin)
+        a views.py module (i.e. ares.admin.views)
+        a module level Flask blueprint instance named blueprint
+        (i.e. blueprint = Blueprint('admin'...
+    '''
+
+    path = os.path.dirname(__file__)
+
+    for _, subdirs, _ in os.walk(path):
+        if len(subdirs) == 0:
+            return
+
+        for dir_name in subdirs:
+            if dir_name[:2] == '__':
+                continue
+
+            name = 'ares.{}'.format(dir_name)
+            mod = __import__(name)
+            mod = getattr(mod, dir_name, None)
+            if mod is None:
+                continue
+
+            views = getattr(mod, 'views', None)
+            if views is None:
+                return
+
+            blueprint = getattr(views, 'blueprint')
+            if blueprint:
+                app.register_blueprint(blueprint)
+
