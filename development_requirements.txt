@@ -16,7 +16,7 @@ Logbook==0.12.5
 lxml==3.6.0
 Mako==1.0.4
 MarkupSafe==0.23
-marshmallow==2.7.3
+marshmallow==2.15.1
 marshmallow-polyfield==3.0
 pkg-resources==0.0.0
 py==1.4.31
